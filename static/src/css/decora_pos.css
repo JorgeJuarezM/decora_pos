@@ -1,0 +1,151 @@
+@import url(../fonts/circular-font.css);
+.pos{
+    font-family:'Circular', sans-serif !important;
+}
+
+.pos .product .product-name{
+    white-space: nowrap !important;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.pos .product-img{
+    width: 122px !important;
+    height: 70px !important;
+    margin-top: 15px !important;
+}
+
+.pos .product .product-img img {
+    max-height: 100px !important;
+    max-width: 80px !important;
+}
+
+.pos .p_mayoreo,
+.pos .p_caja{
+    font-weight: 700;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.pos .p_mayoreo{
+    color: #2ebd79;
+}
+
+.pos .p_caja{
+    color: #0a5ca7;
+}
+
+.pos .price-per-box-tag,
+.pos .price-wholesale-tag{
+    position: absolute;
+    right: 2px;
+    vertical-align: top;
+    color: white;
+    line-height: 13px;
+    padding: 2px 0px;
+    border-radius: 2px;
+}
+
+.pos .price-wholesale-tag{
+    background: #2ebd79;
+    top: 40%;
+    left: 0;
+    width: 50%;
+}
+
+.pos .price-per-box-tag{
+    top: 40%;
+    right: 0;
+    width: 50%;
+    background: #0a5ca7;
+}
+
+.pos .price-tag{
+    background: #888888 !important;
+    top: 0 !important;
+    left: 0 !important;
+     right: 0 !important;
+}
+
+.pos .box-tag{
+    text-transform:uppercase;
+    font-size: 12px;
+    color: #0a5ca7;
+}
+
+.pos .container-tags{
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    margin-top: -10px;
+}
+
+.pos .price-tags{
+    position: absolute;
+    width: 100%;
+    height:inherit;
+}
+
+.pos .popup.popup-error .title {
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.pos .product {
+    height: 165px !important;
+    overflow: visible !important;
+}
+
+.pos .qty-available-tag{
+    right: 0;
+    line-height: 43px;
+    text-align: center;
+    z-index: 1111;
+    position:absolute;
+    width: 40px;
+    height: 40px;
+    margin-top: -15px;
+    margin-right: -10px;
+    box-shadow: 3px -4px 6px #888888;
+    font-size: 11px;
+    font-weight: 700;
+    color:#333;
+    background:#fff;
+    border-radius: 40px;
+}
+
+.pos .qty-available-text{
+    position: absolute;
+    left:0;
+    height: 20px;
+    line-height: 20px;
+    z-index: 1111;
+    margin-top: -5px;
+    background-color: white;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    box-shadow: -3px -3px 6px #888888;
+}
+
+.pos .qty-available-tag.available,
+.pos .qty-available-text.available{
+    color: #2ebd79 !important;
+}
+.pos .service,
+.pos .consumible{
+    color: #2ebd79 !important;
+}
+
+.pos .qty-available-text.available{
+    width: 94px;
+}
+
+.pos .qty-available-text.not-available{
+    width: 100px;
+}
+
+.pos .qty-available-tag.not-available,
+.pos .qty-available-text.not-available{
+    color: #cb2d3e !important;
+}

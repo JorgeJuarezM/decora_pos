@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template" xml:space="preserve">
+    <t t-extend="Product">
+        <t t-jquery=".product-img" t-operation="replace">
+            <span t-attf-title="Cantidad en stock #{product.post_qty_available !== 0 and product.type === 'product' ? 'disponible' : 'sin existencias'}"
+                  t-attf-class="qty-available-text #{product.post_qty_available !== 0 and product.type === 'product' ? 'available' : 'not-available' }">
+                <t t-if="product.post_qty_available !== 0 and product.type === 'product' " >
+                    En Existencia
+                </t>
+                <t t-else="">
+                    <t t-if="product.type === 'consu'">
+                        <span class="consumible">Consumible</span>
+                    </t>
+                    <t t-elif="product.type === 'service'">
+                        <span class="service">Servicio</span>
+                    </t>
+                    <t t-else="">
+                        Sin existencias
+                    </t>
+                </t>
+            </span>
+
+            <span t-if="product.post_qty_available !== 0 and product.type === 'product'" class="qty-available-tag available">
+                <t t-esc="product.post_qty_available"/>
+            </span>
+            <span t-elif="product.type === 'consu'" class="qty-available-tag consumible">
+                <t t-esc="product.post_qty_available"/>
+            </span>
+            <span t-elif="product.type === 'service'" class="qty-available-tag service">
+                <t t-esc="product.post_qty_available"/>
+            </span>
+            <span t-elif="product.post_qty_available === 0 and product.type ===  'product'" class="qty-available-tag not-available">
+                <t t-esc="product.post_qty_available" />
+            </span>
+            <t t-else="">
+
+            </t>
+
+            <div class="product-img">
+                <img t-att-src='image_url' />
+                <t t-if="!product.to_weight">
+                    <div class="container-tags">
+                        <span class="price-tag">
+                            <t t-esc="widget.format_currency(product.price,'Product Price')"/>
+                        </span>
+                        <div class="price-tags">
+                            <span class="price-wholesale-tag">
+                                <t t-esc="widget.format_currency(product.precio_mayoreo, 'Product Price')" />
+                            </span>
+                            <span class="price-per-box-tag" t-if="product.se_puede_vender_por_caja">
+                                <t t-if="product.precio_x_caja > 0" t-esc="widget.format_currency(product.precio_x_caja, 'Product Price')" />
+                            </span>
+                        </div>
+                    </div>
+                </t>
+                <t t-if="product.to_weight">
+                    <div class="container-tags">
+                        <span class="price-tag">
+                            <t t-esc="widget.format_currency(product.price,'Product Price')+'/'+widget.pos.units_by_id[product.uom_id[0]].name"/>
+                        </span>
+                        <div class="price-tags">
+                            <span class="price-wholesale-tag">
+                                <t t-esc="widget.format_currency(product.precio_mayoreo, 'Product Price')" />
+                            </span>
+                            <span class="price-per-box-tag" t-if="product.se_puede_vender_por_caja">
+                                <t t-if="product.precio_x_caja > 0" t-esc="widget.format_currency(product.precio_x_caja, 'Product Price')" />
+                            </span>
+                        </div>
+                    </div>
+                </t>
+            </div>
+        </t>
+    </t>
+
+    <t t-extend="Orderline">
+        <t t-jquery=".product-name" t-operation="replace">
+            <span class="product-name">
+                <t t-esc="line.get_product().display_name"/>
+                <span style="color: #0a5ca7;" t-if="line.get_product().se_puede_vender_por_caja">
+                    ■ [Se puede vender por caja]
+                </span>
+                <t t-if="line.get_product().tracking!=='none'">
+                    <i t-attf-class="oe_link_icon fa fa-list oe_icon line-lot-icon #{line.has_valid_product_lot() ? 'oe_green' : 'oe_red' }"/>
+                </t>
+            </span>
+        </t>
+    </t>
+
+    <!--TODO: check in orderline if qty_available is less than current quantity -->
+    <t t-name="InfoPopupWidget">
+        <div class="modal-dialog">
+            <div class="popup wrap popup-info">
+                <p class="title"><t t-esc="widget.options.title || 'Info' " /></p>
+                <p class="body"><t t-esc="widget.options.body || '' " /></p>
+                <div class="footer">
+                    <div class="button info">
+                        Aceptar
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+
+</templates>

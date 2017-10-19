@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+    	<!-- DATA GLOBAL VALUE FOR WHOESALE PIECES -->
+        <record id="global_piece_wholesale" model="pos.piece.config">
+            <field name="aplica_media_caja">1</field>
+            <field name="piezas_mayoreo_iguales">0.0</field>
+            <field name="piezas_mayoreo_diferentes">0.0</field>
+        </record>
+    </data>
+</odoo>

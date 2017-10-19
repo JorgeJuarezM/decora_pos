@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="point_of_sale_decora_assets" inherit_id="point_of_sale.assets">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/decora_pos/static/src/js/decora_pos.js"></script>
+            <script type="text/javascript" src="/decora_pos/static/src/js/popups.js"></script>
+        </xpath>
+        <xpath expr="//link[@id='pos-stylesheet']" position="after">
+            <link rel="stylesheet" href="/decora_pos/static/src/css/decora_pos.css"/>
+            <link rel="stylesheet" href="/decora_pos/static/src/css/popups.css"/>
+        </xpath>
+    </template>
+</odoo>

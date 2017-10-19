@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="pos_piece_config_form" model="ir.ui.view">
+        <field name="name">pos.piece.config.form</field>
+        <field name="model">pos.piece.config</field>
+        <field name="arch" type="xml">
+            <form string="Configuración Piezas TPV" create="0">
+                <sheet>
+                    <group string="Configuración Piezas Mayoreo">
+                        <field name="aplica_media_caja" />
+                        <field name="piezas_mayoreo_diferentes" />
+                        <field name="piezas_mayoreo_iguales" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="pos_piece_config_tree" model="ir.ui.view">
+        <field name="name">pos.piece.config.tree</field>
+        <field name="model">pos.piece.config</field>
+        <field name="arch" type="xml">
+            <tree string="Configuración Piezas TPV" create="0" edit="0">
+                <field name="piezas_mayoreo_diferentes" />
+                <field name="piezas_mayoreo_iguales" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_pos_piece_config" model="ir.actions.act_window">
+        <field name="name">Configure Piezas TPV</field>
+        <field name="res_model">pos.piece.config</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_type">form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Agrega una nueva configuración de Piezas en TPV
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_pos_piece_settings" name="Piezas TPV"
+              parent="point_of_sale.menu_point_config_product"
+              action="action_pos_piece_config"
+              /> <!--groups="base.group_system"/-->
+</odoo>
