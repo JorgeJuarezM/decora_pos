@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
 {
-    'name': 'Stock Punto de Venta',
+    'name': 'POS Stock',
     'version': '1.0',
     'author': '@jorgejuarezmx',
     'category': 'POS',
-    'summary': """Stock Punto de Venta""",
+    'summary': """POS Stock By Warehouse Locations, Multiple Prices""",
     'depends': ['product', 'point_of_sale'],
     'data': [
         'security/ir.model.access.csv',
