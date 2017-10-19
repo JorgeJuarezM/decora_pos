@@ -17,4 +17,6 @@
     'qweb': ['static/src/xml/decora_pos.xml'],
     'installable': True,
     'application': True,
+    'price': 20.00,
+    'currency': 'USD'
 }
