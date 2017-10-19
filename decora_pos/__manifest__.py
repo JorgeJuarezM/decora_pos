@@ -18,5 +18,6 @@
     'installable': True,
     'application': True,
     'price': 20.00,
-    'currency': 'USD'
+    'currency': 'USD',
+    'images': ['static/images/screen.png']
 }
