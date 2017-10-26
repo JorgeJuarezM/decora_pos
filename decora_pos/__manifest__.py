@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 {
-    'name': 'POS Stock',
+    'name': 'POS Stock - Community',
     'version': '1.0',
     'author': '@jorgejuarezmx',
     'category': 'POS',
